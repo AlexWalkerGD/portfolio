@@ -1,50 +1,28 @@
 import Project from "./project";
-import styles from "./projects.module.css";
 
-const Projetos = ({
-  Icon, // ícone principal
-  iconColor = "#FFA500",
-  itemHover = "#FFA500",
-  size = 60,
-}) => {
+const Projetos = ({ Icon, iconColor = "#FFA500", size = 60 }) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.iconWrapper}>
+    <div className="flex items-center gap-5 p-5 rounded-xl">
+      {/* Ícone */}
+      <div
+        className="flex items-center justify-center p-5 rounded-full transition-transform duration-300"
+        style={{
+          boxShadow: `0 0 15px ${iconColor}`,
+        }}
+      >
         <Icon size={size} color={iconColor} />
       </div>
-      <ul className={styles.list}>
-        <li
-          className={styles.item}
-          style={{
-            boxShadow: itemHover,
-          }}
-        >
-          <Project />
-        </li>
-        <li
-          className={styles.item}
-          style={{
-            boxShadow: itemHover,
-          }}
-        >
-          <Project />
-        </li>
-        <li
-          className={styles.item}
-          style={{
-            boxShadow: itemHover,
-          }}
-        >
-          <Project />
-        </li>
-        <li
-          className={styles.item}
-          style={{
-            boxShadow: itemHover,
-          }}
-        >
-          <Project />
-        </li>
+
+      {/* Lista */}
+      <ul className="custom-scroll flex gap-4 overflow-x-auto pb-3 scroll-smooth">
+        {[1, 2, 3, 4].map((n) => (
+          <li
+            key={n}
+            className="flex items-center justify-center flex-none w-[350px] p-4 rounded-lg transition-transform duration-200 cursor-pointer"
+          >
+            <Project />
+          </li>
+        ))}
       </ul>
     </div>
   );

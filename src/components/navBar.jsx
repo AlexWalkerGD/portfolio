@@ -28,7 +28,7 @@ const NavBar = () => {
         </div>
 
         {/* Button */}
-        <button className="hidden md:block border-2 px-4 py-2 rounded-xl hover:bg-purple-600 transition">
+        <button className="hidden md:block border-2 px-4 py-2 rounded-xl hover:bg-purple-600 transition cursor-pointer">
           Let's Connect
         </button>
       </div>

@@ -1,7 +1,8 @@
 import "./App.css";
 import logo from "/logo.png";
 import { TiHtml5 } from "react-icons/ti";
-import { IoLogoCss3, IoArrowForwardCircleOutline } from "react-icons/io5";
+import { RiJavascriptFill } from "react-icons/ri";
+import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { FaReact } from "react-icons/fa";
 import Projects from "./components/projects";
 import NavBar from "./components/navBar";
@@ -10,7 +11,7 @@ function App() {
   return (
     <div className="w-full font-[Poppins] ">
       <NavBar />
-      <div className="bg-[rgb(8,8,8)] text-amber-50 ">
+      <div className="bg-[url('/bg3.jpg')] bg-cover bg-center bg-no-repeat h-screen text-amber-50 ">
         <div className="flex">
           <div className="content">
             <h4 className="border px-4 py-2 mx-48 mt-14 font-medium text-center bg-gradient-to-r from-indigo-950 via-purple-900 to-purple-950">
@@ -31,16 +32,17 @@ function App() {
             </p>
             <div className="flex">
               <h4 className="pl-10 font-semibold">Let's connect</h4>
-              <button className="pl-2">
+              <button className="pl-2 cursor-pointer">
                 <IoArrowForwardCircleOutline size={22} />
               </button>
             </div>
           </div>
           <img src={logo} alt="logo" height={150} width={150} />
         </div>
-        <div className="">
-          <Projects Icon={TiHtml5} itemHover="#00b7ffff" />
-          <Projects Icon={FaReact} itemHover="#00b7ffff" />
+        <div className="gap-10 bg-[rgb(10,10,10)] mt-5 mx-2 rounded-3xl">
+          <Projects Icon={TiHtml5} iconColor="#F06529" />
+          <Projects Icon={RiJavascriptFill} iconColor="#FFA500" />
+          <Projects Icon={FaReact} iconColor="#00b7ffff" />
         </div>
       </div>
     </div>

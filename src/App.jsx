@@ -1,16 +1,19 @@
 import "./App.css";
-import logo from "/imag.png";
+
 import { TiHtml5 } from "react-icons/ti";
-import { RiJavascriptFill } from "react-icons/ri";
-import { RiNextjsFill } from "react-icons/ri";
+import { RiJavascriptFill, RiNextjsFill } from "react-icons/ri";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { FaReact } from "react-icons/fa";
-import Projects from "./components/projects";
+import { useState, useEffect } from "react";
+
 import NavBar from "./components/navBar";
-import { useState } from "react";
+import Certifications from "./components/certifications";
+import Loader from "./components/loader";
+import ContactSection from "./components/contactSection";
 
 function App() {
   const [selectedSkill, setSelectedSkill] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const projectsData = {
     html: [
@@ -107,6 +110,16 @@ function App() {
     ],
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <Loader />;
+
   return (
     <div className="w-full font-[Poppins]">
       <NavBar />
@@ -143,7 +156,7 @@ function App() {
               </button>
             </div>
           </div>
-          <img src={logo} alt="logo" width={500} className="mr-60" />
+          <img src="/imag.png" alt="logo" width={500} className="mr-60" />
         </div>
         <div className="gap-10 bg-[rgb(12,12,12)] mt-0 mx-10 rounded-3xl flex flex-col">
           <h1 className="text-2xl font-medium text-center pt-5">Skills</h1>
@@ -232,6 +245,10 @@ function App() {
               ))}
             </div>
           )}
+        </div>
+        <div className="w-full font-[Poppins]">
+          <Certifications /> {/* <-- coloque aqui */}
+          <ContactSection />
         </div>
       </div>
     </div>

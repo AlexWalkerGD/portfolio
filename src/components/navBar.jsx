@@ -22,9 +22,15 @@ const NavBar = () => {
 
         {/* Social Icons */}
         <div className="hidden md:flex gap-4 text-xl">
-          <FaInstagram className="cursor-pointer hover:text-purple-400 transition" />
-          <FaGithub className="cursor-pointer hover:text-purple-400 transition" />
-          <FaLinkedin className="cursor-pointer hover:text-purple-400 transition" />
+          <a href="https://www.instagram.com/alexwalkergd/" target="_blank">
+            <FaInstagram className="cursor-pointer hover:text-purple-400 transition" />
+          </a>
+          <a href="https://github.com/AlexWalkerGD" target="_blank">
+            <FaGithub className="cursor-pointer hover:text-purple-400 transition" />
+          </a>
+          <a href="https://www.linkedin.com/in/alex-walkergd/" target="_blank">
+            <FaLinkedin className="cursor-pointer hover:text-purple-400 transition" />
+          </a>
         </div>
 
         {/* Button */}

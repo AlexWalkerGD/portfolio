@@ -72,7 +72,7 @@ function App() {
             </div>
           </div>
           <img
-            src="%PUBLIC_URL%/imag.png"
+            src="/portfolio/imag.png"
             alt="logo"
             className="w-64 md:w-[450px] lg:w-[500px] mx-auto md:mx-0"
           />

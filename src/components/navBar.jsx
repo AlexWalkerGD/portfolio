@@ -10,7 +10,7 @@ const NavBar = () => {
     <nav className="w-full bg-black text-gray-100 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8">
         {/* Logo */}
-        <img src="/logon.png" alt="Logo" className="w-24" />
+        <img src="/portfolio/logon.png" alt="Logo" className="w-24" />
 
         {/* 
         

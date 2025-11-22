@@ -1,6 +1,6 @@
 const Certifications = () => {
   return (
-    <section className="mt-20 px-8">
+    <section className="mt-20 px-8 pt-10">
       <h2 className="text-3xl font-bold text-white text-center mb-10">
         Learning Journey
       </h2>

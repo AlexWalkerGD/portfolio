@@ -49,17 +49,7 @@ function App() {
               maintainable code. I have experience turning ideas into functional
               and efficient interfaces, consistently delivering solutions that
               are not only visually refined but also optimized, reusable, and
-              built to scale. I work with attention to detail, strong
-              development standards, and a product-oriented mindset. I’m
-              constantly evolving toward becoming a full-stack developer,
-              expanding my knowledge in APIs, databases, advanced integrations,
-              security, and scalability—all with the goal of creating robust,
-              end-to-end systems ready for the real market and adaptable to
-              multiple clients with distinct needs. I also focus on building
-              applications that can be easily customized and sold in scale,
-              leveraging my solid UI/UX understanding, fast learning ability,
-              and curiosity for new technologies to deliver consistent and
-              professional results.
+              built to scale.
             </p>
             <div className="flex pb-9 pl-5">
               <h4 className="pl-10 font-semibold">Let's connect</h4>
@@ -77,9 +67,9 @@ function App() {
             className="w-64 md:w-[450px] lg:w-[500px] mx-auto md:mx-0"
           />
         </div>
-        <div className="gap-10 bg-[rgb(12,12,12)] mt-0 mx-10 rounded-3xl flex flex-col">
+        <div className="gap-10 bg-[rgb(12,12,12)] mt-0 mx-5 rounded-3xl flex flex-col">
           <h1 className="text-2xl font-medium text-center pt-5">Skills</h1>
-          <p className="text-center text-neutral-400 px-20">
+          <p className="text-center text-neutral-400 px-5 m-auto">
             My skills were developed through self-learning and hands-on
             experience, shaped by building practical and diverse projects. I
             have strong knowledge of HTML, CSS, JavaScript, and TypeScript, and

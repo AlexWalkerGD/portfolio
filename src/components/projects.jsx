@@ -82,6 +82,12 @@ const projectsData = {
       image: "/portfolio/projects-image/react3.png",
       link: "https://alexwalkergd.github.io/github-finder/",
     },
+    {
+      id: 5,
+      title: "Notes App",
+      image: "/portfolio/projects-image/react4.png",
+      link: "https://notes-app-psi-ten.vercel.app/",
+    },
   ],
   next: [
     {

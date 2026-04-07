@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const projectsData = {
   html: [
     {
@@ -100,7 +102,36 @@ const projectsData = {
 };
 
 export default function Projects({ selectedSkill }) {
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [activeProjectId, setActiveProjectId] = useState(null);
   const filtered = projectsData[selectedSkill] || [];
+
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
+      return undefined;
+    }
+
+    const mediaQuery = window.matchMedia("(hover: none), (pointer: coarse)");
+    const updateTouchDevice = (event) => {
+      setIsTouchDevice(event.matches);
+    };
+
+    setIsTouchDevice(mediaQuery.matches);
+
+    if (typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", updateTouchDevice);
+
+      return () => mediaQuery.removeEventListener("change", updateTouchDevice);
+    }
+
+    mediaQuery.addListener(updateTouchDevice);
+
+    return () => mediaQuery.removeListener(updateTouchDevice);
+  }, []);
+
+  useEffect(() => {
+    setActiveProjectId(null);
+  }, [selectedSkill, isTouchDevice]);
 
   return (
     <>
@@ -115,25 +146,43 @@ export default function Projects({ selectedSkill }) {
             <div
               key={proj.id}
               className="relative rounded-xl overflow-hidden shadow-lg cursor-pointer group"
+              onClick={() => {
+                if (!isTouchDevice) return;
+                setActiveProjectId((currentId) =>
+                  currentId === proj.id ? null : proj.id,
+                );
+              }}
             >
               <img
                 src={proj.image}
                 alt={proj.title}
-                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                className={`w-full h-48 object-cover transition-transform duration-300 ${
+                  isTouchDevice && activeProjectId === proj.id
+                    ? "scale-105"
+                    : "group-hover:scale-105"
+                }`}
               />
 
               <div
-                className="
+                className={`
                       absolute inset-0 
                       bg-black/70 
                       flex items-center justify-center 
-                      translate-y-[-100%]
-                      group-hover:translate-y-0
+                      ${
+                        isTouchDevice
+                          ? activeProjectId === proj.id
+                            ? "translate-y-0"
+                            : "translate-y-[-100%]"
+                          : "translate-y-[-100%] group-hover:translate-y-0"
+                      }
                       transition-all duration-500
-                    "
+                    `}
               >
                 <button
-                  onClick={() => window.open(proj.link, "_blank")}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    window.open(proj.link, "_blank");
+                  }}
                   className="cursor-pointer px-4 py-2 bg-purple-700 hover:bg-purple-800 rounded-lg font-medium text-white"
                 >
                   View

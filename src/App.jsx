@@ -14,7 +14,7 @@ import Projects from "./components/projects";
 import Modal from "./components/modal";
 
 function App() {
-  const [selectedSkill, setSelectedSkill] = useState(null);
+  const [selectedSkill, setSelectedSkill] = useState("html");
   const [loading, setLoading] = useState(true);
   const [openModal, setOpenModal] = useState(false);
 
@@ -76,10 +76,15 @@ function App() {
             I use React, Tailwind, Axios, and React Router to build efficient,
             fluid, high-performance interfaces.
           </p>
+          <p className="text-center text-neutral-400 px-5 m-auto">
+            Click on the icons and check out my projects.
+          </p>
 
           <ul className="flex justify-center gap-5 rounded-xl pb-10">
             <li
-              className="flex cursor-pointer hover:scale-105 transition-transform items-center justify-center p-2 rounded-full transition-transform duration-300"
+              className={`flex cursor-pointer hover:scale-105 transition-transform items-center justify-center p-2 rounded-full duration-300 ${
+                selectedSkill === "html" ? "skill-pulse" : ""
+              }`}
               style={{
                 boxShadow: `0 0 15px #F06529`,
               }}
@@ -88,7 +93,9 @@ function App() {
               <TiHtml5 size={35} />
             </li>
             <li
-              className="flex cursor-pointer hover:scale-105 transition-transform items-center justify-center p-2 rounded-full transition-transform duration-300"
+              className={`flex cursor-pointer hover:scale-105 transition-transform items-center justify-center p-2 rounded-full duration-300 ${
+                selectedSkill === "js" ? "skill-pulse" : ""
+              }`}
               style={{
                 boxShadow: `0 0 15px #FFA500`,
               }}
@@ -97,7 +104,9 @@ function App() {
               <RiJavascriptFill size={35} />
             </li>
             <li
-              className="flex cursor-pointer hover:scale-105 transition-transform items-center justify-center p-2 rounded-full transition-transform duration-300"
+              className={`flex cursor-pointer hover:scale-105 transition-transform items-center justify-center p-2 rounded-full duration-300 ${
+                selectedSkill === "react" ? "skill-pulse" : ""
+              }`}
               style={{
                 boxShadow: `0 0 15px #00b7ffff`,
               }}
@@ -106,7 +115,9 @@ function App() {
               <FaReact size={35} />
             </li>
             <li
-              className="flex cursor-pointer hover:scale-105 transition-transform items-center justify-center p-2 rounded-full transition-transform duration-300"
+              className={`flex cursor-pointer hover:scale-105 transition-transform items-center justify-center p-2 rounded-full duration-300 ${
+                selectedSkill === "next" ? "skill-pulse" : ""
+              }`}
               style={{
                 boxShadow: `0 0 15px #228b22`,
               }}

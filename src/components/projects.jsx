@@ -95,8 +95,21 @@ const projectsData = {
     {
       id: 1,
       title: "Barbershop",
-      image: "/portfolio/projects-image/next.png",
-      link: "https://barbershop-project-dfvoh1ycv-alex-pedrosos-projects.vercel.app/",
+      image: "/portfolio/projects-image/next0.png",
+      link: "https://www.tempus.today/barbershops/cde2acb9-50d4-4359-b68d-cb7e6b4ea8a4",
+    },
+
+    {
+      id: 2,
+      title: "Finance AI",
+      image: "/portfolio/projects-image/next1.png",
+      link: "https://finance-ai-one-opal.vercel.app/",
+    },
+    {
+      id: 3,
+      title: "Our Store",
+      image: "/portfolio/projects-image/next2.png",
+      link: "https://our-store-xi.vercel.app/",
     },
   ],
 };
@@ -107,7 +120,10 @@ export default function Projects({ selectedSkill }) {
   const filtered = projectsData[selectedSkill] || [];
 
   useEffect(() => {
-    if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
+    if (
+      typeof window === "undefined" ||
+      typeof window.matchMedia !== "function"
+    ) {
       return undefined;
     }
 
